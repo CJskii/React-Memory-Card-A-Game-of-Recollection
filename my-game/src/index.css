@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html {
   min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  height: fit-content;
+  background: rgb(51, 51, 51);
+  background: linear-gradient(
+    0deg,
+    rgba(51, 51, 51, 1) 60%,
+    rgba(158, 0, 255, 1) 100%
+  );
 }

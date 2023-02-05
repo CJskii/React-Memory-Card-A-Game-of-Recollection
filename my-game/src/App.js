@@ -1,15 +1,21 @@
 import "./App.css";
+import Header from "./Components/Header";
+import Score from "./Components/Game/Score";
+import Information from "./Components/Information";
+import Game from "./Components/Game/Game";
 
 const App = () => {
   return (
-    <div className="app bg-slate-600 h-screen">
+    <div className="app  h-screen">
+      <Header />
+      <Score />
+      <Information />
+      <Game />
       {/* HEADER
       SCORE
-      BOARD
-      FOOTER */}
-      <h1 className="font-bold text-center p-4 text-5xl text-blue-600">
-        Memory Card Game
-      </h1>
+      GAME
+      FOOTER
+      bg-neutral-800 */}
     </div>
   );
 };

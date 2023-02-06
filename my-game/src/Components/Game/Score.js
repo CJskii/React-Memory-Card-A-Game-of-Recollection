@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Score = () => {
-  const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+const Score = (props) => {
   return (
-    <div className="text-center sm:p-8">
-      <p>
-        Your score: <span className="font-medium">{score}</span>
+    <div className="score mx-auto text-center sm:p-8 flex flex-shrink-0 items-center justify-center bg-zinc-400 m-2 rounded">
+      <p className="px-4 text-xl">
+        Your score: <span className="font-medium">{props.score}</span>
       </p>
-      <p>
-        Best score: <span className="font-medium">{bestScore}</span>{" "}
+      <p className="px-4 text-xl">
+        Best score: <span className="font-medium">{props.bestScore}</span>{" "}
       </p>
     </div>
   );

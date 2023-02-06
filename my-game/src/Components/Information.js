@@ -2,7 +2,7 @@ import React from "react";
 
 const Information = () => {
   return (
-    <p className="p-4 text-center text-orange-500">
+    <p className="p-4 text-center text-orange-500 text-xl">
       Click on the image, but don't click twice on the same one
     </p>
   );

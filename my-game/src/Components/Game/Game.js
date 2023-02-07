@@ -37,10 +37,6 @@ const Game = () => {
     setScore(score + 1);
   };
 
-  const updateBestScore = () => {
-    // conditional check for score when the game finishes
-  };
-
   const restartGame = () => {
     console.log("restarting");
     if (score > bestScore) {
@@ -57,7 +53,6 @@ const Game = () => {
       <Board
         score={score}
         updateScore={updateScore}
-        updateBestScore={updateBestScore}
         cardNames={cardNames}
         restartGame={restartGame}
       />

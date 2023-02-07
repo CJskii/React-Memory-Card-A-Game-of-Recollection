@@ -3,10 +3,12 @@ import Card from "./Card";
 
 const Board = (props) => {
   const [cards, setCards] = useState([]);
+  const [selectedCards, setSelectedCards] = useState([]);
 
   useEffect(() => {
     console.log("randomly render cards");
     generateRandomCards();
+    // eslint-disable-next-line
   }, [props.score]);
 
   const generateRandomCards = () => {
@@ -25,9 +27,29 @@ const Board = (props) => {
     setCards(arr);
   };
 
-  const handleCardClick = () => {
+  const handleCardClick = (e) => {
     console.log("check if this card was clicked already");
-    props.updateScore();
+    const selectedCard = e.target.id;
+    const arr = selectedCards;
+    const isSelected = checkSelectedCards(selectedCard, arr);
+    if (isSelected) {
+      console.log("restart the game now");
+      props.restartGame();
+      setSelectedCards([]);
+    } else {
+      props.updateScore();
+      arr.push(selectedCard);
+      setSelectedCards(arr);
+    }
+  };
+
+  const checkSelectedCards = (selectedCard, arr) => {
+    const isInTheArray = arr.find((card) => card === selectedCard);
+    if (isInTheArray) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   return (
@@ -38,7 +60,7 @@ const Board = (props) => {
             key={index}
             name={card.name}
             source={card.source}
-            handleCardClick={handleCardClick}
+            handleCardClick={(e) => handleCardClick(e)}
           />
         );
       })}

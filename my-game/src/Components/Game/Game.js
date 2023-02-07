@@ -41,14 +41,25 @@ const Game = () => {
     // conditional check for score when the game finishes
   };
 
+  const restartGame = () => {
+    console.log("restarting");
+    if (score > bestScore) {
+      setBestScore(score);
+      setScore(0);
+    } else {
+      setScore(0);
+    }
+  };
+
   return (
-    <div className="text-center h-full bg-neutral-700 m-4 rounded border-neutral-600 border-2 flex-col justify-center items-center">
+    <div className="game text-center h-full bg-neutral-700 m-4 rounded border-neutral-600 border-2 flex-col justify-center items-center">
       <Score score={score} bestScore={bestScore} />
       <Board
         score={score}
         updateScore={updateScore}
         updateBestScore={updateBestScore}
         cardNames={cardNames}
+        restartGame={restartGame}
       />
     </div>
   );

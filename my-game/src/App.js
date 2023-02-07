@@ -9,11 +9,6 @@ const App = () => {
       <Header />
       <Information />
       <Game />
-      {/* HEADER
-      SCORE
-      GAME
-      FOOTER
-      bg-neutral-800 */}
     </div>
   );
 };

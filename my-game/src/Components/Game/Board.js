@@ -2,60 +2,45 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
 const Board = (props) => {
-  const [images, setImages] = useState([]);
   const [cards, setCards] = useState([]);
-  const characterNames = [
-    "Ash",
-    "Bangalore",
-    "Bloodhound",
-    "Caustic",
-    "Crypto",
-    "Fuse",
-    "Gibraltar",
-    "Horizon",
-    "Lifeline",
-    "Loba",
-    "Maggie",
-    "Mirage",
-    "Newcastle",
-    "Octane",
-    "Pathfinder",
-    "Rampart",
-    "Revenant",
-    "Seer",
-    "Valkyrie",
-    "Vantage",
-    "Wattson",
-    "Wraith",
-  ];
-  useEffect(() => {
-    generateCardData();
-  }, []);
 
   useEffect(() => {
     console.log("randomly render cards");
+    generateRandomCards();
   }, [props.score]);
 
-  const generateCardData = () => {
+  const generateRandomCards = () => {
+    console.log("generating random card data");
+    console.log("_____________________________");
     const arr = [];
-    characterNames.forEach((name) => {
+    const cardData = props.cardNames;
+    while (cardData.length) {
+      const randomIndex = Math.floor(Math.random() * cardData.length);
+      const randomName = cardData.splice(randomIndex, 1);
       arr.push({
-        name: name,
-        source: `./CardCharacters/${name}.png`,
+        name: randomName,
+        source: `./CardCharacters/${randomName}.png`,
       });
-    });
-    console.log(arr);
+    }
     setCards(arr);
   };
 
   const handleCardClick = () => {
     console.log("check if this card was clicked already");
+    props.updateScore();
   };
 
   return (
     <div className="board flex flex-wrap justify-center">
       {cards.map((card, index) => {
-        return <Card key={index} name={card.name} source={card.source} />;
+        return (
+          <Card
+            key={index}
+            name={card.name}
+            source={card.source}
+            handleCardClick={handleCardClick}
+          />
+        );
       })}
     </div>
   );

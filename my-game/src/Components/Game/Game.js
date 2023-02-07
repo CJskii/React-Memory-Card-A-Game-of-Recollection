@@ -6,6 +6,31 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
+  const cardNames = [
+    "Ash",
+    "Bangalore",
+    "Bloodhound",
+    "Caustic",
+    "Crypto",
+    "Fuse",
+    "Gibraltar",
+    "Horizon",
+    "Lifeline",
+    "Loba",
+    "Maggie",
+    "Mirage",
+    "Newcastle",
+    "Octane",
+    "Pathfinder",
+    "Rampart",
+    "Revenant",
+    "Seer",
+    "Valkyrie",
+    "Vantage",
+    "Wattson",
+    "Wraith",
+  ];
+
   const updateScore = () => {
     // update score logic here
     console.log("score updated");
@@ -23,6 +48,7 @@ const Game = () => {
         score={score}
         updateScore={updateScore}
         updateBestScore={updateBestScore}
+        cardNames={cardNames}
       />
     </div>
   );

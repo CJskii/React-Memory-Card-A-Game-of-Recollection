@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Card = (props) => {
-  const [source, setSource] = useState("./CardCharacters/Ash.png");
-  const [name, setName] = useState("Name");
-
   return (
     <div
       className="card text-center border-2 border-neutral-500 m-4 rounded"

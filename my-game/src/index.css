@@ -31,9 +31,26 @@ img {
 .card {
   width: fit-content;
   height: fit-content;
+  border-radius: 10px;
+  background: rgb(51, 51, 51);
+  background: radial-gradient(
+    circle,
+    rgba(51, 51, 51, 1) 0%,
+    rgba(98, 11, 26, 1) 50%,
+    rgba(167, 5, 5, 1) 100%
+  );
 }
 
 .score {
   width: fit-content;
   border-radius: 10px;
+}
+
+.game {
+  background: rgba(88, 8, 8, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(88, 8, 8, 0.3);
 }

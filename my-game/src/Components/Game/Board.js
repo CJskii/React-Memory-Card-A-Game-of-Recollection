@@ -4,12 +4,19 @@ import Card from "./Card";
 const Board = (props) => {
   const [cards, setCards] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     console.log("randomly render cards");
     generateRandomCards();
     // eslint-disable-next-line
   }, [props.score]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentIndex(currentIndex + 1);
+    }, 250);
+  }, [currentIndex]);
 
   const generateRandomCards = () => {
     console.log("generating random card data");
@@ -54,16 +61,14 @@ const Board = (props) => {
 
   return (
     <div className="board flex flex-wrap justify-center">
-      {cards.map((card, index) => {
-        return (
-          <Card
-            key={index}
-            name={card.name}
-            source={card.source}
-            handleCardClick={(e) => handleCardClick(e)}
-          />
-        );
-      })}
+      {cards.slice(0, currentIndex).map((card, index) => (
+        <Card
+          key={index}
+          name={card.name}
+          source={card.source}
+          handleCardClick={(e) => handleCardClick(e)}
+        />
+      ))}
     </div>
   );
 };

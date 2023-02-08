@@ -6,26 +6,66 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Sofia;
 }
 
 html {
   height: 100%;
 }
 
+@font-face {
+  font-family: Sofia;
+  src: url(./Components/Font/SofiaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./Components/Font/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Monster;
+  src: url(./Components/Font/Montserrat-VariableFont_wght.ttf);
+}
+
 .app {
   min-height: 100vh;
   height: 100%;
   background: rgb(51, 51, 51);
-  background: linear-gradient(
-    0deg,
-    rgba(51, 51, 51, 1) 60%,
-    rgba(158, 0, 255, 1) 100%
+  background: radial-gradient(
+    circle,
+    rgba(51, 51, 51, 1) 0%,
+    rgba(70, 11, 26, 1) 50%,
+    rgba(120, 5, 5, 1) 100%
   );
+  position: relative;
+}
+
+.header {
+  font-family: Monster;
+}
+
+.game {
+  background: radial-gradient(circle, #a70505 0%, #620b1a 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 img {
   width: 266px;
   height: 350px;
+}
+
+.github {
+  width: 30px;
+  height: 30px;
+}
+
+a {
+  transition: ease-in-out 0.3s;
 }
 
 .card {
@@ -39,18 +79,61 @@ img {
     rgba(98, 11, 26, 1) 50%,
     rgba(167, 5, 5, 1) 100%
   );
+  transition: ease-in-out 0.3s;
+}
+
+.card:hover {
+  background: radial-gradient(
+    circle,
+    rgba(21, 21, 21, 1) 0%,
+    rgba(98, 11, 26, 1) 60%,
+    rgba(167, 5, 5, 1) 100%
+  );
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.38),
+    0px 17px 50px rgba(0, 0, 0, 0.12), 10px 10px 20px rgba(0, 0, 0, 0.48);
 }
 
 .score {
   width: fit-content;
-  border-radius: 10px;
+  background: rgba(120, 11, 26, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(98, 11, 26, 0.31);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.38),
+    0px 17px 50px rgba(0, 0, 0, 0.12), 10px 10px 20px rgba(0, 0, 0, 0.48);
+  position: sticky;
+  top: 0;
+  padding: 10px;
 }
 
-.game {
-  background: rgba(88, 8, 8, 0.4);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(88, 8, 8, 0.3);
+.name,
+.info {
+  color: #e3dfd6;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: slide-in-top, fade-in;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease-in-out, ease-out;
+}
+
+@media (max-width: 320px) {
+  img {
+    width: 200px;
+    height: 284px;
+  }
+  .score > p,
+  .info {
+    font-size: 14px;
+  }
 }

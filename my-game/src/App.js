@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import Information from "./Components/Information";
 import Game from "./Components/Game/Game";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Header />
       <Information />
       <Game />
+      <Footer />
     </div>
   );
 };

@@ -57,6 +57,7 @@ html {
 img {
   width: 266px;
   height: 350px;
+  transition: ease-in-out 0.3s;
 }
 
 .github {

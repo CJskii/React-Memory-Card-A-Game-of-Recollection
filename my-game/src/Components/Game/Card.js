@@ -11,7 +11,7 @@ const Card = (props) => {
         {props.name}
       </h5>
       <img
-        className="center pr-2 pl-2 pb-2 hover:rounded-lg my-auto mx-auto"
+        className="center pr-2 pl-2 pb-2 hover:rounded-lg my-auto mx-auto hover:scale-105"
         src={props.source}
         alt="source"
         id={props.name}

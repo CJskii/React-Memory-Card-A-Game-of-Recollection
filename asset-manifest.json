@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e05cfcb0.css",
+    "main.js": "/static/js/main.2cfb96e8.js",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/static/media/Montserrat-VariableFont_wght.3faa3eef13649db02044.ttf",
+    "static/media/SofiaSans-VariableFont_wght.ttf": "/static/media/SofiaSans-VariableFont_wght.8945c990d011340f50a1.ttf",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "index.html": "/index.html",
+    "main.e05cfcb0.css.map": "/static/css/main.e05cfcb0.css.map",
+    "main.2cfb96e8.js.map": "/static/js/main.2cfb96e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e05cfcb0.css",
+    "static/js/main.2cfb96e8.js"
+  ]
+}
